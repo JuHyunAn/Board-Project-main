@@ -1,0 +1,256 @@
+.List {
+    background-color: #282c34;
+    min-height: 100vh;
+    font-size: calc(10px + 2vmin);
+}
+
+::selection {
+    color: white;
+    background-color: #61dafb;
+}
+
+a {
+    text-decoration-line: none;
+}
+
+.List-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding-top: 5vw;
+    margin-bottom: 4.5vw;
+}
+
+.header-a {
+    color: white;
+}
+
+.nav-a {
+    color: white;
+    font-weight: bold;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: inherit;
+    padding: 0;
+}
+
+.List-nav {
+    margin-left: 7.5vw;
+    margin-bottom: 0.5vw;
+    color: cornflowerblue;
+    font-weight: bold;
+}
+
+.blog-link {
+    color: coral;
+}
+
+/* list tag 글머리 기호 색상 */
+li::marker {
+    color: white;
+}
+
+.board {
+    width: 80%;
+    margin: 0 auto 3rem;
+    border-collapse: separate;
+    border-spacing: 0 12px;
+    color: #dfe7ff;
+}
+
+/* 게시판 목록 헤더 (글쓰기 버튼 영역) */
+.board-list-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+    margin-right: 10vw;
+}
+
+/* 버튼 공통 스타일 */
+.btn-write,
+.btn-submit,
+.btn-cancel,
+.btn-list,
+.btn-edit,
+.btn-delete {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-write {
+    background-color: #61dafb;
+    color: #282c34;
+}
+
+.btn-write:hover {
+    background-color: #4fc3f7;
+    transform: scale(1.05);
+}
+
+.btn-submit {
+    background-color: #4caf50;
+    color: white;
+}
+
+.btn-submit:hover {
+    background-color: #45a049;
+}
+
+.btn-cancel {
+    background-color: #f44336;
+    color: white;
+}
+
+.btn-cancel:hover {
+    background-color: #da190b;
+}
+
+.btn-list {
+    background-color: #2196F3;
+    color: white;
+}
+
+.btn-list:hover {
+    background-color: #0b7dda;
+}
+
+.btn-edit {
+    background-color: #ff9800;
+    color: white;
+}
+
+.btn-edit:hover {
+    background-color: #e68900;
+}
+
+.btn-delete {
+    background-color: #f44336;
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #da190b;
+}
+
+/* 글쓰기/수정 폼 스타일 */
+.board-write,
+.board-edit {
+    color: white;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.board-write h2,
+.board-edit h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #61dafb;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #61dafb;
+    border-radius: 5px;
+    background-color: #1e2228;
+    color: white;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #4fc3f7;
+    box-shadow: 0 0 5px #4fc3f7;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 200px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* 게시글 목록 테이블 */
+.board-box-header th {
+    background: #1f2530;
+    color: #9fb4d5;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 14px 18px;
+    text-align: left;
+    border-bottom: 2px solid #2f3a4a;
+}
+
+.board-box-list td {
+    background: #151a24;
+    padding: 14px 18px;
+    border: 1px solid #222b38;
+    border-bottom: 0;
+}
+
+.board-box-list td:first-child {
+    border-radius: 8px 0 0 8px;
+}
+
+.board-box-list td:last-child {
+    border-radius: 0 8px 8px 0;
+    border-right: 1px solid #222b38;
+}
+
+.board-box-list:hover td {
+    background: #1c2431;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.board-id {
+    width: 8%;
+    text-align: center;
+    color: #7fa1d3;
+}
+
+.board-title a {
+    color: #dfe7ff;
+    font-weight: 600;
+}
+
+.board-title a:hover {
+    color: #7ac5ff;
+}
+
+.board-author {
+    width: 18%;
+    color: #c9d4e5;
+}
+
+.board-regdate {
+    width: 18%;
+    color: #9fb4d5;
+}
