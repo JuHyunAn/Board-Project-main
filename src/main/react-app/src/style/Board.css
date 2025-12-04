@@ -1,5 +1,4 @@
 .List {
-    background-color: #282c34;
     min-height: 100vh;
     font-size: calc(10px + 2vmin);
 }
@@ -55,20 +54,13 @@ li::marker {
 
 .board {
     width: 80%;
-    margin: 0 auto 3rem;
+    margin: 0 auto 1.75rem; /* 테이블 하단 여백을 조금 줄임 */
     border-collapse: separate;
     border-spacing: 0 12px;
     color: #dfe7ff;
 }
 
 /* 게시판 목록 헤더 (글쓰기 버튼 영역) */
-.board-list-header {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 1rem;
-    margin-right: 10vw;
-}
-
 /* 버튼 공통 스타일 */
 .btn-write,
 .btn-submit,
@@ -139,6 +131,13 @@ li::marker {
 
 .btn-delete:hover {
     background-color: #da190b;
+}
+
+.board-list-footer {
+    display: flex;
+    justify-content: flex-end;
+    width: 80%;
+    margin: 0.5rem auto 5rem; /* 목록과 버튼 사이 간격 살짝 축소 */
 }
 
 /* 글쓰기/수정 폼 스타일 */

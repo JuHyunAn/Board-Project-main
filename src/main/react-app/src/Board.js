@@ -75,8 +75,8 @@ function Board() {
     return (
         <BrowserRouter>
             <div className="List">
-                <Header title="Simple Board" clickFunction={() => {
-                    alert('Simple Board 입니다!');
+                <Header title="게시판" clickFunction={() => {
+                    alert('게시판 홈으로 이동합니다.');
                 }} />
                 <Nav bodylist={navItems} clickFunction={(text) => {
                     alert(text);

@@ -26,9 +26,6 @@ const BoardList = () => {
 
     return (
         <div>
-            <div className="board-list-header">
-                <button className="btn-write" onClick={handleWriteClick}>글쓰기</button>
-            </div>
             <table className="board">
                 <thead className="board-box-header">
                     <tr>
@@ -55,9 +52,11 @@ const BoardList = () => {
                 }
                 </tbody>
             </table>
+            <div className="board-list-footer">
+                <button className="btn-write" onClick={handleWriteClick}>글쓰기</button>
+            </div>
         </div>
     );
 };
 
 export default BoardList;
-

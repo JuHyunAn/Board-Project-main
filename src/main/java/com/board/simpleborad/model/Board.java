@@ -1,4 +1,4 @@
-﻿package com.board.simpleborad.model;
+package com.board.simpleborad.model;
 
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
