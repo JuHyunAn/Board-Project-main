@@ -20,6 +20,8 @@ public class Board {    // DB 객체 생성
     private String author;  // 작성자
     private String content; // 내용
 
+    private String delYn;   // 삭제여부(Y/N) - 기본값(N) 2025-12-04추가
+
     @CreationTimestamp
     private LocalDateTime regDate;   // 작성일자
 
@@ -29,7 +31,6 @@ public class Board {    // DB 객체 생성
     public Board orElseThrow(Object object) {
         return this;
     }
-
 
     // lombok(@Data)에 의해 자동으로 getter, setter 생성
     // setTitle(), setAuthor(), setContent(), setRegDate(), setUpdateDate

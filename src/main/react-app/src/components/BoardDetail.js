@@ -55,26 +55,22 @@ const BoardDetail = () => {
                     <tr className="detail-header">
                         <th className="detail-id">No.</th>
                         <th className="detail-title">제목</th>
+                        <th className="detail-author">작성자</th>
+                        <th className="detail-date">작성일</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr className="detail-item">
                         <td className="detail-id">{details.id}</td>
                         <td className="detail-title">{details.title}</td>
-                    </tr>
-                    <tr className="detail-header">
-                        <th className="detail-author">작성자</th>
-                        <th className="detail-date">작성일</th>
-                    </tr>
-                    <tr className="detail-item">
                         <td className="detail-author">{details.author}</td>
                         <td className="detail-date">{details.regDate}</td>
                     </tr>
                     <tr className="detail-header">
-                        <th colSpan="2" className="detail-content-header">내용</th>
+                        <th colSpan="4" className="detail-content-header">내용</th>
                     </tr>
                     <tr className="detail-item">
-                        <td colSpan="2" className="detail-content">{details.content}</td>
+                        <td colSpan="4" className="detail-content">{details.content}</td>
                     </tr>
                 </tbody>
             </table>
@@ -88,4 +84,3 @@ const BoardDetail = () => {
 };
 
 export default BoardDetail;
-

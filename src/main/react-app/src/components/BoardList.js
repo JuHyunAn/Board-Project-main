@@ -1,4 +1,4 @@
-﻿import React, {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import axios from "axios";
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -11,7 +11,7 @@ const BoardList = () => {
         async function getBoard() {
 
             // 해당 URL에 GET 요청하여 JSON 데이터를 가져옴(Controller 참조)
-            const response = await axios.get('/board'); // = url: 'localhost:8080/board'
+            const response = await axios.get('/board'); // = url: 'localhost:8080/board' → JSON 데이터 확인가능
             const object = response.data;
 
             setBoards(object);  // = boards
@@ -48,7 +48,7 @@ const BoardList = () => {
                             <td className="board-author">{params.author}</td>
                             <td className="board-regdate">{params.regDate}</td>
                         </tr>
-                    ) : null    // 예외처리
+                    ) : null // 예외처리
                 }
                 </tbody>
             </table>

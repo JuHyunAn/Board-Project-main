@@ -18,25 +18,38 @@ public class BoardService {
     private BoardRepository boardRepository;  // Interface 호출
 
 
+    // 게시글 전체 조회
+    /* 삭제여부가 'N'인 것만 조회하도록 수정 2025-12-04
     // DB 객체를 리스트 형태로 가져옴
     public List<Board> getAllBoardModel() {
         return boardRepository.findAll();    // SELECT * FROM BOARD
-    }
+    } //!   >>>
+    */
 
+    public List<Board> getAllBoardModelDelYnN() {
+        return boardRepository.findByDelYn("N");    // SELECT * FROM BOARD WHERE DEL_YN = 'N'
+    } //*   <<<
+
+
+    // 게시글 상세 조회
     // Model로 부터 id를 가져옴
     public Board getId(Long id) {
         return boardRepository.findById(id)  // SELECT * FROM BOARD WHERE ID = ?
                 .orElseThrow(() -> new RuntimeException("게시글을 찾을 수 없습니다.")); // 예외처리
     }
 
+
+    // 게시글 작성
     // 게시글 작성 완료 시, DB에 정보를 날려서 저장(post) → 매개변수를 DB 객체가 정의된 Model로 설정
     public Board createBoard(Board board) {
 
         // INSERT INTO BOARD(ID, TITLE, AUTHOR, CONTENT) VALUES (...) WHERE ID = ?
+        board.setDelYn("N"); //*   <<<
         return boardRepository.save(board);
     }
 
 
+    // 게시글 수정
     // JPA에서 Update 진행 시, Dirty Checking 동작
     public Board updateBoard(Long id, @RequestBody Board boardDetails) {
         Board board = boardRepository.findById(id)
@@ -53,15 +66,23 @@ public class BoardService {
         // 3. save() 메소드 호출 이후 DB 반영
         return boardRepository.save(board);
     }
-
+    
 
     // 게시글 삭제
     // 삭제 메소드는 별도의 return 값이 없으므로 void 타입으로 설정
     public void deleteBoard(Long id) {   // 게시글 id로 찾아서 삭제
         Board board = boardRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("게시글을 찾을 수 없습니다."));
+        
+        
+        // TODO: 삭제여부 컬럼 추가 후, 물리삭제에서 논리삭제로 변경 2025-12-04
 
-        // 
-        boardRepository.delete(board);   // 해당 객체(id) 삭제
+        // 물리삭제
+        // boardRepository.delete(board); //!   >>>
+        
+        // 논리삭제
+        board.setDelYn("Y"); //*   <<<
+        boardRepository.save(board); //*   <<<
     }
+
 }

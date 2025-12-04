@@ -32,12 +32,12 @@
 }
 
 .detail-title {
-    width: 90%;
+    width: 40%;
 }
 
 .detail-author,
 .detail-date {
-    width: 50%;
+    width: 25%;
 }
 
 .detail-content {

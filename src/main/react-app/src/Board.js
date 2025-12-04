@@ -15,7 +15,7 @@ function Header(props) {
     return (
         <header className="List-header">
             <h1>
-                <a className="header-a" href="http://localhost:8080/board" target="_blank" rel="noopener noreferrer"
+                <a className="header-a" href="http://localhost:3000/" rel="noopener noreferrer"
                    onClick={(e) => {
                        props.clickFunction(); // alert 발생
                    }}>
@@ -78,9 +78,9 @@ function Board() {
                 <Header title="게시판" clickFunction={() => {
                     alert('게시판 홈으로 이동합니다.');
                 }} />
-                <Nav bodylist={navItems} clickFunction={(text) => {
+                {/* <Nav bodylist={navItems} clickFunction={(text) => {
                     alert(text);
-                }}/>
+                }}/> */}
                 <div className="board-body">
                     {/* 기존 <table>태그를 컴포넌트로 변경 호출 */}
                     <Routes>

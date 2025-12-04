@@ -20,7 +20,8 @@ public class BoardController {   // Service에서 만든 기능(각 Method)을 �
 
     @GetMapping
     public List<Board> getAllBoardModel() {
-        return boardService.getAllBoardModel();
+        // return boardService.getAllBoardModel(); //!   >>>
+        return boardService.getAllBoardModelDelYnN(); //*   <<<
     }
 
     @GetMapping("/{id}")
